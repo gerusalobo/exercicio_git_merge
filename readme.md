@@ -6,4 +6,4 @@
 - Merge sem conflitos
 - Merge com conflitos
 
-_Este projeto só faz sentido no contexto de aula no qual foi concebido e apresentado e não deve ser utilizado fora deste contexto_
+_Este projeto só faz sentido no contexto de aula no qual foi concebido e apresentado e não deve ser utilizado fora deste cenário_
