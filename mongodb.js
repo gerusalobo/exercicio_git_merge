@@ -1,7 +1,10 @@
+//selecionar o banco
 use fiscalizacao
 
+//criar a tabela
 db.createCollection("inspecoes2") 
 
+//criar um registro
 db.inspecoes2.insertOne({
    'nome_posto':'Posto ABC',
    'cnpj':'12345',
@@ -16,8 +19,10 @@ db.inspecoes2.insertOne({
    'foto': 'xyz.png'
 })
 
+//select count(*)
 db.inspecoes2.countDocuments()
 
+//registro
 var registro = [
 {
    'nome_posto':'Posto CDE',
@@ -60,11 +65,20 @@ var registro = [
 }
 ]
 
+//inserir registro
 db.inspecoes2.insertMany(registro)
 
+// update
 db.inspecoes2.updateOne(
 {  'nome_posto':'Posto ABC'},    
 {$set:{'preco_comustiveis.gasolina':'6.00'}})
 
+//selects
 
 db.getCollection('inspecoes2').find({})
+
+db.getCollection('inspecoes2').find({'cnpj':'12345'})
+
+//delete
+db.inspecoes2.deleteOne({'nome_posto':'Posto XX'})
+
