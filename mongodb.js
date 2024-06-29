@@ -19,9 +19,6 @@ db.inspecoes2.insertOne({
    'foto': 'xyz.png'
 })
 
-//select count(*)
-db.inspecoes2.countDocuments()
-
 //registro
 var registro = [
 {
@@ -73,12 +70,35 @@ db.inspecoes2.updateOne(
 {  'nome_posto':'Posto ABC'},    
 {$set:{'preco_comustiveis.gasolina':'6.00'}})
 
+//delete
+db.inspecoes2.deleteOne({'nome_posto':'Posto XX'})
+
+//select count(*)
+db.inspecoes2.countDocuments()
+
 //selects
 
 db.getCollection('inspecoes2').find({})
 
-db.getCollection('inspecoes2').find({'cnpj':'12345'})
+db.inspecoes2.find({})
 
-//delete
-db.inspecoes2.deleteOne({'nome_posto':'Posto XX'})
+db.inspecoes2.find({'cnpj':'12345'})
+
+db.inspecoes2.find({
+    $and: [
+        {'preco_comustiveis.gasolina_aditivada':'6.50'},
+        {'preco_comustiveis.alcool':'4.00'}
+        ]
+    })
+
+// $gt >=  $lt <=
+
+db.inspecoes2.find({
+    $and:[
+        {'preco_comustiveis.gasolina_aditivada':{$gt: '6.2'}},
+        {'preco_comustiveis.gasolina_aditivada':{$lt: '7.0'}}
+        ]
+    })
+
+
 
