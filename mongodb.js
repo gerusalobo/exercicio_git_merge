@@ -62,3 +62,9 @@ var registro = [
 
 db.inspecoes2.insertMany(registro)
 
+db.inspecoes2.updateOne(
+{  'nome_posto':'Posto ABC'},    
+{$set:{'preco_comustiveis.gasolina':'6.00'}})
+
+
+db.getCollection('inspecoes2').find({})
