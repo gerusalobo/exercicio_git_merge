@@ -115,6 +115,7 @@ db.inspecoes3.aggregate([
     }
 ])
 
+
 //
 //criar um novo campo double de um de texto
 //
